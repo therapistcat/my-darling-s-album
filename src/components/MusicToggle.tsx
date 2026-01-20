@@ -1,9 +1,30 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Music, VolumeX } from 'lucide-react';
+// Make sure the path matches where you put the file in Step 1
+import audioSrc from '@/assets/music/finding her.mp3';
 
 const MusicToggle = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(new Audio(audioSrc));
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    audio.loop = true;
+
+    if (isPlaying) {
+      audio.play().catch((error) => {
+        console.log("Audio play failed:", error);
+        setIsPlaying(false);
+      });
+    } else {
+      audio.pause();
+    }
+
+    return () => {
+      audio.pause();
+    };
+  }, [isPlaying]);
 
   return (
     <motion.button

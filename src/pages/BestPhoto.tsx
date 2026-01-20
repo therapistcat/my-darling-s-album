@@ -4,7 +4,7 @@ import PageTransition from '@/components/PageTransition';
 import BackButton from '@/components/BackButton';
 import FloatingHearts from '@/components/FloatingHearts';
 
-import heartsImage from '@/assets/photos/best/hearts-bokeh.jpg';
+import heartsImage from '@/assets/photos/best/image.jpeg';
 
 const BestPhoto = () => {
   return (
@@ -34,7 +34,7 @@ const BestPhoto = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            The Bestest Photo
+            Meri sabse favourite photo
           </motion.h1>
 
           <motion.p
@@ -43,7 +43,7 @@ const BestPhoto = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            "Of all our moments, this one speaks to my heart the most"
+            "inn hi aankhon me kho jaata hu"
           </motion.p>
 
           {/* Main Photo */}
@@ -55,7 +55,7 @@ const BestPhoto = () => {
           >
             {/* Glow effect */}
             <div className="absolute inset-0 rounded-3xl shadow-glow scale-105 blur-xl opacity-50 bg-primary/30" />
-            
+
             {/* Photo frame */}
             <div className="relative rounded-3xl overflow-hidden shadow-card border-4 border-card">
               <motion.img
@@ -65,7 +65,7 @@ const BestPhoto = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
               />
-              
+
               {/* Sparkle decorations */}
               <motion.div
                 className="absolute top-4 left-4"
@@ -100,14 +100,14 @@ const BestPhoto = () => {
               <Heart className="text-primary" size={36} fill="currentColor" />
               <Heart className="text-primary" size={28} fill="currentColor" />
             </motion.div>
-            
+
             <h2 className="font-script text-2xl md:text-3xl text-foreground">
-              My favorite moment ❤️
+              ill love you till eternity ❤️
             </h2>
-            
+
             <p className="font-body text-muted-foreground max-w-md">
-              This photo captures everything I love about us. 
-              Every time I see it, my heart feels so full.
+              dil karrta hai teri baatein sunnu, saudein me adhure chunu.
+              me dil ka raaz kehta hu, jab jab saanse leta hu tera hi naam leta hu.
             </p>
           </motion.div>
         </div>

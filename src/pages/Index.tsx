@@ -1,56 +1,57 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // Added this import
 import { Heart, Sparkles } from 'lucide-react';
 import FloatingHearts from '@/components/FloatingHearts';
 import TimelineItem from '@/components/TimelineItem';
-import MusicToggle from '@/components/MusicToggle';
+// Removed MusicToggle import from here
 import PageTransition from '@/components/PageTransition';
 
-import coupleImage from '@/assets/photos/us/couple-sunset.jpg';
-import flowersImage from '@/assets/photos/beautiful/flowers.jpg';
-import partyImage from '@/assets/photos/goofy/party.jpg';
-import heartsImage from '@/assets/photos/best/hearts-bokeh.jpg';
+import coupleImage from '@/assets/photos/us/image1.jpeg';
+import flowersImage from '@/assets/photos/beautiful/image5.jpeg';
+import partyImage from '@/assets/photos/goofy/image1.jpeg';
+import heartsImage from '@/assets/photos/best/image.jpeg';
 import letterImage from '@/assets/photos/memories/love-letter.jpg';
 
 const timelineItems = [
   {
     to: '/goofy',
-    title: 'Our Goofy Moments',
-    subtitle: 'When we laugh until we cry',
+    title: 'muhhh banao bass',
+    subtitle: 'Chotu bhondu sa mera baccha',
     image: partyImage,
     emoji: '🤪',
   },
   {
     to: '/beautiful',
-    title: 'Your Beauty',
-    subtitle: 'Every moment, breathtaking',
+    title: 'Meri Sundari',
+    subtitle: 'harr ek photu parr mera dil aa jaata hai',
     image: flowersImage,
     emoji: '✨',
   },
   {
     to: '/best',
-    title: 'The Bestest Photo',
-    subtitle: 'My absolute favorite',
+    title: 'Mera Personal favorite',
+    subtitle: 'waise toh aap hi mere favorite ho',
     image: heartsImage,
     emoji: '💖',
   },
   {
     to: '/us',
-    title: 'Us Together',
-    subtitle: 'Two hearts, one story',
+    title: 'Humm hain',
+    subtitle: 'kuch samjh nahi rha yahan kya likhu',
     image: coupleImage,
     emoji: '💑',
   },
   {
     to: '/memories',
-    title: 'Precious Memories',
-    subtitle: 'Moments frozen in time',
+    title: 'Muh banati hui meri bewdi',
+    subtitle: 'pasta kab khilaogi?',
     image: letterImage,
     emoji: '📸',
   },
   {
     to: '/letters',
-    title: 'Love Letters',
-    subtitle: 'Words from my heart',
+    title: 'khol karr padhoo',
+    subtitle: 'dil se likhaa hu',
     image: letterImage,
     emoji: '💌',
   },
@@ -61,13 +62,14 @@ const Index = () => {
     <PageTransition>
       <div className="min-h-screen bg-background relative overflow-hidden">
         <FloatingHearts />
-        <MusicToggle />
+
+        {/* REMOVED: <MusicToggle /> is now in App.tsx */}
 
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex flex-col items-center justify-center px-4 py-16">
           {/* Gradient overlay */}
           <div className="absolute inset-0 gradient-romantic opacity-50" />
-          
+
           {/* Content */}
           <motion.div
             className="relative z-10 text-center max-w-3xl mx-auto"
@@ -82,7 +84,7 @@ const Index = () => {
               transition={{ delay: 0.3, type: 'spring' }}
             >
               <Sparkles className="text-primary" size={16} />
-              <span className="font-body text-sm text-muted-foreground">A Digital Love Letter</span>
+              <span className="font-body text-sm text-muted-foreground">Mera pyaar ki ek choti jhalak</span>
               <Sparkles className="text-primary" size={16} />
             </motion.div>
 
@@ -92,7 +94,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              For My Love
+              Meri Chiku ke liye
             </motion.h1>
 
             <motion.p
@@ -101,7 +103,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              "Every moment with you is a memory I treasure forever"
+              "meri bauni scroll karr legi naa?"
             </motion.p>
 
             <motion.div
@@ -111,7 +113,7 @@ const Index = () => {
               transition={{ delay: 0.8 }}
             >
               <Heart className="text-primary animate-heart-beat" size={24} fill="currentColor" />
-              <span className="font-body text-muted-foreground">Scroll to explore our journey</span>
+              <span className="font-body text-muted-foreground">bewdi</span>
               <Heart className="text-primary animate-heart-beat" size={24} fill="currentColor" />
             </motion.div>
 
@@ -140,7 +142,7 @@ const Index = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
-              Our Story <span className="text-primary">💕</span>
+              Humari Kahani<span className="text-primary">💕</span>
             </motion.h2>
 
             <div className="space-y-12 md:space-y-16">
@@ -158,15 +160,17 @@ const Index = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <motion.a
-            href="/surprise"
-            className="inline-flex items-center gap-2 font-script text-lg text-muted-foreground hover:text-primary transition-colors"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Sparkles size={16} />
-            There's a surprise waiting for you...
-            <Sparkles size={16} />
-          </motion.a>
+          {/* Changed 'a' tag to 'Link' to prevent page reload and keep music playing */}
+          <Link to="/surprise">
+            <motion.div
+              className="inline-flex items-center gap-2 font-script text-lg text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Sparkles size={16} />
+              Dont Click...
+              <Sparkles size={16} />
+            </motion.div>
+          </Link>
         </motion.div>
 
         {/* Footer */}

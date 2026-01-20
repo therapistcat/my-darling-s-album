@@ -7,15 +7,21 @@ import PhotoCard from '@/components/PhotoCard';
 import PhotoModal from '@/components/PhotoModal';
 import FloatingHearts from '@/components/FloatingHearts';
 
-import partyImage from '@/assets/photos/goofy/party.jpg';
+import Image1 from '@/assets/photos/goofy/image11.jpeg';
+import Image2 from '@/assets/photos/goofy/image2.jpeg';
+import Image3 from '@/assets/photos/goofy/image3.jpeg';
+import Image4 from '@/assets/photos/goofy/image4.jpeg';
+import Image5 from '@/assets/photos/goofy/image5.jpeg';
+import Image6 from '@/assets/photos/goofy/image6.jpeg';
+
 
 const photos = [
-  { src: partyImage, caption: 'That time we couldn\'t stop laughing! 😂' },
-  { src: partyImage, caption: 'Your silly face is my favorite 🤪' },
-  { src: partyImage, caption: 'Partners in crime forever 😜' },
-  { src: partyImage, caption: 'When you made that weird face 🥴' },
-  { src: partyImage, caption: 'Dancing like nobody\'s watching 💃' },
-  { src: partyImage, caption: 'Our crazy adventures together 🎉' },
+  { src: Image1, caption: 'lips khaane ka mann karr rha! 😂' },
+  { src: Image2, caption: 'favorite sticker hai mera ngl🤪' },
+  { src: Image3, caption: 'ganji 😜' },
+  { src: Image4, caption: 'mene li hai ye photu 🥴' },
+  { src: Image5, caption: 'pufffffff💃' },
+  { src: Image6, caption: 'chudail meri ice cream khaa rhi🎉' },
 ];
 
 const GoofyPhotos = () => {
@@ -38,23 +44,23 @@ const GoofyPhotos = () => {
             <PartyPopper className="text-primary" size={32} />
             <Smile className="text-gold" size={32} />
           </motion.div>
-          
+
           <motion.h1
             className="font-script text-4xl md:text-6xl text-primary mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Our Goofy Moments
+            Meri Pagli
           </motion.h1>
-          
+
           <motion.p
             className="font-display text-lg text-muted-foreground italic"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            "Life is better when you're laughing together"
+            "Aise hi photu bhejti rehnaa"
           </motion.p>
         </header>
 

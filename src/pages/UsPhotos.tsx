@@ -6,14 +6,23 @@ import BackButton from '@/components/BackButton';
 import FloatingHearts from '@/components/FloatingHearts';
 
 import coupleImage from '@/assets/photos/us/couple-sunset.jpg';
+import Image1 from '@/assets/photos/us/image1.jpeg';
+import Image2 from '@/assets/photos/us/image2.jpeg';
+import Image3 from '@/assets/photos/us/image3.jpeg';
+import Image4 from '@/assets/photos/us/image4.jpeg';
+import Image5 from '@/assets/photos/us/image5.jpeg';
+import Image6 from '@/assets/photos/us/video.mp4';
+
 
 const photos = [
-  { src: coupleImage, date: 'Our First Date', caption: 'Where it all began 💕' },
-  { src: coupleImage, date: 'That Special Day', caption: 'When you said yes 💍' },
-  { src: coupleImage, date: 'Summer Adventures', caption: 'Exploring the world together 🌍' },
-  { src: coupleImage, date: 'Cozy Nights', caption: 'Home is wherever you are 🏠' },
-  { src: coupleImage, date: 'Celebrations', caption: 'Every day with you is worth celebrating 🎉' },
-  { src: coupleImage, date: 'Forever & Always', caption: 'Us against the world 💪' },
+  { src: Image1, date: 'riksha me', caption: 'bas romance 💕', type: 'image' },
+  { src: Image2, date: 'saath me photus kamm hain yawr', caption: 'padhai kiya crow 💍', type: 'image' },
+  { src: Image6, date: 'bohot saari photu leni hai ji', caption: 'puri duniya ek taraf hum ek taraf 💪', type: 'video' },
+
+  { src: Image3, date: 'theatre me', caption: 'kissi karrne se ghar nahi chalta 🌍', type: 'image' },
+  { src: Image4, date: 'dherr saari kissi', caption: 'meri bauni se pyaar karne me kya sharm 🏠', type: 'image' },
+  { src: Image5, date: 'ye pata nahi', caption: 'gandi baatein kamm karo 🎉', type: 'image' },
+  // Mark this one as video
 ];
 
 const UsPhotos = () => {
@@ -46,7 +55,7 @@ const UsPhotos = () => {
             <Users className="text-primary" size={32} />
             <Heart className="text-primary animate-heart-beat" size={32} fill="currentColor" />
           </motion.div>
-          
+
           <motion.h1
             className="font-script text-4xl md:text-6xl text-primary mb-4"
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +64,7 @@ const UsPhotos = () => {
           >
             Us Together
           </motion.h1>
-          
+
           <motion.p
             className="font-display text-lg text-muted-foreground italic"
             initial={{ opacity: 0 }}
@@ -97,15 +106,27 @@ const UsPhotos = () => {
                 transition={{ delay: 0.1 * index }}
               >
                 <div className="group bg-card rounded-3xl overflow-hidden shadow-card border border-border hover:shadow-glow transition-all duration-500">
-                  {/* Photo */}
+                  {/* Photo or Video */}
                   <div className="relative h-80 overflow-hidden">
-                    <motion.img
-                      src={photo.src}
-                      alt={photo.date}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+                    {photo.type === 'video' ? (
+                      <motion.video
+                        src={photo.src}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <motion.img
+                        src={photo.src}
+                        alt={photo.date}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    )}
+
+                    {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                    
                     {/* Date badge */}
                     <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-card/80 backdrop-blur-sm text-sm font-body text-foreground">
                       {photo.date}
@@ -157,9 +178,9 @@ const UsPhotos = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="w-4 h-4 rounded-full bg-primary shadow-glow z-10" />
-                  
+
                   <div className="flex-1">
                     {index % 2 !== 0 && (
                       <div className="bg-card p-4 rounded-2xl shadow-soft border border-border inline-block">

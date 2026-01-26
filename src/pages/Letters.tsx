@@ -7,8 +7,8 @@ import FloatingHearts from '@/components/FloatingHearts';
 const letters = [
   {
     title: 'To My Forever Person',
-    date: 'January 15, 2024',
-    content: `My Dearest Love,
+    date: 'January 15, 2026',
+    content: `meri mehraaru,
 
 From the moment you walked into my life, everything changed. The colors became brighter, the music became sweeter, and my heart found its home.
 
@@ -20,39 +20,18 @@ Forever Yours,
 Me 💕`
   },
   {
-    title: 'What You Mean to Me',
-    date: 'February 14, 2024',
+    title: 'lovee you mera baccha',
+    date: 'December 17, 2025',
     content: `My Beautiful Love,
 
-Words could never fully express what you mean to me, but I'll try...
-
-You are the sunshine on my cloudy days. You are the calm in my storm. You are the reason I believe in magic.
-
-Every adventure with you is my favorite. Every moment by your side is a treasure. Every day loving you is a blessing.
-
-I promise to cherish you always.
-
-With All My Heart,
-Your One and Only 💖`
+baadme bharunga`
   },
   {
-    title: 'A Thousand Reasons',
-    date: 'March 8, 2024',
-    content: `My Sweet Love,
+    title: 'kya re chikni',
+    date: 'March 8, 2026',
+    content: `meri maalkin,
 
-If I had to list all the reasons I love you, I'd need a lifetime. But here are just a few...
-
-The way your eyes sparkle when you're excited.
-How your hand fits perfectly in mine.
-Your kindness that inspires me every day.
-The little things you do that show you care.
-Your strength that amazes me.
-Your vulnerability that you trust me with.
-
-You are extraordinary, and I'm the luckiest person alive.
-
-Endlessly Yours,
-Your Biggest Fan 💝`
+kuch chzein baad ke liye `
   },
 ];
 
@@ -81,7 +60,7 @@ const Letters = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Love Letters
+            suar
           </motion.h1>
           
           <motion.p
@@ -90,7 +69,7 @@ const Letters = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            "Words from the depths of my heart"
+            "dherrr saari pyaari"
           </motion.p>
         </header>
 
